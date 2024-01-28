@@ -1,0 +1,186 @@
+<div style="padding: 7px;">
+
+    <div style="float: left;border: 1px solid black;margin-right: 8px;width: 16%;height: 850px;">
+        <div style="background-color: rgb(188, 207, 233);padding-left: 5px;">
+            <span style="font-weight:900;font-size: 20px;">Palettes</span>
+            <hr style="margin: 0px;">
+        </div>
+        <div>
+            <ul style="list-style-type: none;padding:10px">
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Office 2010 - Blue
+
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Office 2010 - Silver
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Office 2010 - Black
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Office 2007 - Blue
+
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Office 2007 - Silver
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Office 2007 - Silver
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Office 2003
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Sparcle - Blue
+
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Sparcle - Orange
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> Sparcle - Purple
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name="office"> System
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div style="border: 1px solid black;float: left;width: 83%;height: 850px;">
+        <div style="background-color:rgb(188, 212, 245) ;padding-left: 5px;">
+            <span style="font-weight: bold;">Weightment Entry</span>
+            <hr style="margin: 0px;">
+        </div>
+        <table>
+            <tr>
+                <div style="border: 1px solid black;margin: 5px;padding: 5px;float: left;">
+                    <table>
+                        <tr>
+                            <td>
+                                <input disabled class="result" placeholder="0" [(ngModel)]="weights.grossWeight">
+                            </td>
+                            <td>
+                                <button class="capture">Capture
+                                    Weight
+                                    (F5)</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="border: 1px solid black;float: left;margin: 5px;padding:10px;height: 83px;width: 275px;">
+                    <input type="checkbox"> Is Return Load
+                </div>
+            </tr>
+            <tr>
+                <td>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="padding:0px 0px 5px 5px;">
+                                <div style="padding: 10px;border: 1px solid black;">
+                                    <table style="vertical-align: top;">
+                                        <tr>
+                                            <td style="padding: 3px;">Vehicle No</td>
+                                            <td style="padding: 3px;"><input [(ngModel)]="weights.vehicleNo" type="text"
+                                                    name="vehicleno" (ngModelChange)="vehicleNo()" maxlength="10"
+                                                    style="width: 225px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 3px;">Weight</td>
+                                            <td style="padding: 3px;"><input disabled [(ngModel)]="weights.grossWeight"
+                                                    style=" width: 225px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 3px;">Material</td>
+                                            <td style="padding: 3px;">
+                                                <select style="width: 225px;" [(ngModel)]="weights.productName"
+                                                    name="material">
+                                                    <option selected>-Select-</option>
+                                                    <option value="M.SAND">M.SAND</option>
+                                                    <option value="6 MM">6MM</option>
+                                                    <option value="10 MM">10MM</option>
+                                                    <option value="20 MM">20MM</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 3px;">Party Name</td>
+                                            <td style="padding: 3px;"><input style="width: 225px;"
+                                                    [(ngModel)]="weights.partyName">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 3px;">Location</td>
+                                            <td style="padding: 3px;">
+                                                <select style="width: 225px;">
+                                                    <option>EX-FACTORY</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 3px;">Pass No</td>
+                                            <td style="padding: 3px;"><input style="width: 225px;" value="NC"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 3px;">Prev. Weight</td>
+                                            <td style="padding: 3px;"><input style="width: 225px;" type="text"
+                                                    maxlength="5" name="tare" [(ngModel)]="tareweight"
+                                                    (ngModelChange)="updateResult()" (ngModelChange)="tare()"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 3px;">Net Weight</td>
+                                            <td style="padding: 3px;">
+                                                <input [(ngModel)]="weights.netWeight" disabled style="width: 225px;">
+                                                <!-- <p>{{netWeight}}</p> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 3px;">Notes</td>
+                                            <td style="padding: 3px;"><input style="width: 225px;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top;">
+                                <div
+                                    style="padding: 15px 5px 15px 5px;border: 1px solid black;margin-left: 5px;width:530px;">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input
+                                                    style="background-color: black;border: 0px;height:230px ;width: 250px;margin-right: 6px;"
+                                                    disabled>
+                                            </td>
+                                            <td>
+                                                <input
+                                                    style="background-color: black;border: 0px;height:230px ;width: 250px;margin-left: 6px;"
+                                                    disabled>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div
+                                    style="border: 1px solid black;margin: 5px 0px 0px 5px;padding: 13px 5px 13px 5px;width: 530px;">
+                                    <button (click)="printFormData()" class="submt">Save(F10)</button>
+                                    <button class="submt">Clear</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div style="position: absolute;bottom: 0;left: 0;right: 0;">
+            <input type="text" [(ngModel)]="grossweight" (ngModelChange)="updateResult()" placeholder="grossWeight"
+                (ngModelChange)="OutDateTime()">
+            <input type="text" placeholder="InTime" [(ngModel)]="inTime" (ngModelChange)="InDateTime()" maxlength="7"
+                style="margin-left: 5px;">
+
+        </div>
+
+
+    </div>
+</div>

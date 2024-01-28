@@ -1,0 +1,19 @@
+<form [formGroup]="loginForm">
+    <div style="margin: auto;margin:100px;text-align: center;">
+        <div>
+            <input type="text" placeholder="User Name" [(ngModel)]="email" name="email" formControlName="email">
+            <label *ngIf="Email?.touched && Email?.invalid" style="color: red;">*Email is
+                required</label>
+        </div>
+        <br>
+        <div>
+            <input type="password" placeholder="Password" [(ngModel)]="password" name="password"
+                formControlName="password">
+            <label *ngIf="Password?.touched && Password?.invalid" style="color: red;">*Password is
+                required</label>
+        </div>
+        <br>
+
+        <button [disabled]="loginForm.invalid" (click)="login()">LogIn</button>
+    </div>
+</form>
