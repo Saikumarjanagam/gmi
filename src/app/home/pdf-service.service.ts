@@ -47,7 +47,7 @@ export class PdfGeneratorService {
           margin: [0, 0, 0, 3],
         },
         line: {
-          margin: [0, 0, 0, 4],
+          margin: [0, 0, 0, 48],
         },
         line2: {
           margin: [0, 0, 0, 15],
