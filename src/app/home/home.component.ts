@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     const storedCount = localStorage.getItem('count');
-    this.count = storedCount ? parseInt(storedCount) : 0;
+    this.count = storedCount ? parseInt(storedCount) : 100342300983;
     this.tareweight = '';
 
   }
