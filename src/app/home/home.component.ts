@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Weight } from './weight.model';
 import { PdfGeneratorService } from './pdf-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ChallanService } from './challan-service.service';
 
 @Component({
   selector: 'home',
@@ -10,7 +9,7 @@ import { ChallanService } from './challan-service.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private pdfGeneratorService: PdfGeneratorService, private challanService: ChallanService) { }
+  constructor(private pdfGeneratorService: PdfGeneratorService) { }
 
   weights = new Weight();
   grossweight: string;
