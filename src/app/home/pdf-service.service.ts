@@ -16,7 +16,10 @@ export class PdfGeneratorService {
 
     pdfMake.createPdf({
       content: [
-        { text: `_______________________________________________________________________________________`, style: 'subheader' },
+        { text: `GANGOTHRI METAL INDUSTRY `, style: 'head' },
+        { text: `GMI/KZ `, style: 'head1' },
+        { text: 'GSTNO: 36AAGFG0766R1ZT ', style: 'head' },
+        { text: `_______________________________________________________________________________________________`, style: 'line3' },
         { text: `Customer Name : ${weight.partyName}`, style: 'subheader' },
         { text: `Destination : EX-FACTORY`, style: 'subheader' },
         { text: `Delivery challaran cum Weighing slip No: ${localStorage.getItem('count')}`, style: 'subheader1' },
@@ -29,7 +32,7 @@ export class PdfGeneratorService {
         { text: `Date in : ${weight.IndateZero}${weight.inDate}-${weight.InmonthZero}${weight.inMonth + 1}-${weight.inYear}   Time In: ${weight.InhourZero}${weight.inHours}:${weight.InminuteZero}${weight.inMinutes}:00 ${weight.InAmPm}`, style: 'subheader' },
         { text: `Date Out : ${weight.dateZero}${weight.outDate}-${weight.monthZero}${weight.outMonth + 1}-${weight.outYear}    Time Out: ${weight.hourZero}${weight.outHours}:${weight.minuteZero}${weight.outMinutes}:00 ${weight.OutAmPm}`, style: 'subheader' },
         {
-          text: [{ text: 'Gross Wt. : ', style: 'subheader1' }, { text: weight.tenGoss + ',' + weight.thousenGross, style: 'bold' }, { text: ' kg      Tare Wt. : ', style: 'subheader1' }, { text: weight.tenTare + ',' + weight.thousenTare, style: 'bold' }, { text: ' kg     Net Wt. : ', style: 'subheader1' }, { text: weight.tenNet + ',' + weight.thousenNet, style: 'bold' }, { text: ' kg', style: 'subheader1' }]
+          text: [{ text: 'Gross Wt. : ', style: 'subheader1' }, { text: weight.tenGoss + ',' + weight.thousenGross, style: 'bold' }, { text: ' kg      Tare Wt. : ', style: 'subheader1' }, { text: weight.tenTare + ',' + weight.thousenTare, style: 'bold' }, { text: ' kg     Net Wt. : ', style: 'subheader1' }, { text: weight.tenNet + ',' + weight.thousenNet, style: 'bold' }, { text: ' kg', style: 'subheader1' }], style: 'weight'
         },
         { text: `_______________________________________________________________________________________________`, style: 'line' },
 
@@ -42,6 +45,16 @@ export class PdfGeneratorService {
         // Add more fields as needed
       ],
       styles: {
+        head: {
+          bold: true,
+          fontSize: 13,
+          marginLeft: 130,
+        },
+        head1: {
+          bold: true,
+          fontSize: 13,
+          marginLeft: 170,
+        },
         subheader1: {
           fontSize: 13,
           margin: [0, 0, 0, 0],
@@ -56,8 +69,12 @@ export class PdfGeneratorService {
         line2: {
           margin: [0, 0, 0, 15],
         },
+        line3: {
+          margin: [0, 0, 0, 3],
+        },
         bold: {
-          bold: true
+          bold: true,
+          fontSize: 13,
         }
       },
     }).open();
