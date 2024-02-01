@@ -31,7 +31,8 @@ export class PdfGeneratorService {
         { text: `Gross Wt. : ${weight.tenGoss},${weight.thousenGross} kg      Tare Wt. : ${weight.tenTare},${weight.thousenTare} kg     Net Wt. : ${weight.tenNet},${weight.thousenNet} kg`, style: 'subheader1' },
         { text: `_______________________________________________________________________________________________`, style: 'line' },
 
-        { text: `Dispatch incharge          Driver Sign.        Customer Sign. with stamp`, style: 'subheader' }
+        { text: `Dispatch incharge          Driver Sign.        Customer Sign. with stamp`, style: 'subheader' },
+        { text: `Dispatch incharge          Driver Sign.        Customer Sign. with stamp`, style: 'bold' }
 
 
 
@@ -51,6 +52,9 @@ export class PdfGeneratorService {
         },
         line2: {
           margin: [0, 0, 0, 15],
+        },
+        bold: {
+          bold: true
         }
       },
     }).open();
