@@ -28,13 +28,16 @@ export class PdfGeneratorService {
         { text: `Tran. Pass No : NA`, style: 'subheader' },
         { text: `Date in : ${weight.IndateZero}${weight.inDate}-${weight.InmonthZero}${weight.inMonth + 1}-${weight.inYear}   Time In: ${weight.InhourZero}${weight.inHours}:${weight.InminuteZero}${weight.inMinutes}:00 ${weight.InAmPm}`, style: 'subheader' },
         { text: `Date Out : ${weight.dateZero}${weight.outDate}-${weight.monthZero}${weight.outMonth + 1}-${weight.outYear}    Time Out: ${weight.hourZero}${weight.outHours}:${weight.minuteZero}${weight.outMinutes}:00 ${weight.OutAmPm}`, style: 'subheader' },
-        { text: `Gross Wt. : ${weight.tenGoss},${weight.thousenGross} kg      Tare Wt. : ${weight.tenTare},${weight.thousenTare} kg     Net Wt. : ${weight.tenNet},${weight.thousenNet} kg`, style: 'subheader1' },
+        {
+          text: [{ text: 'Gross Wt. : ', style: 'subheader1' }, { text: weight.tenGoss + ',' + weight.thousenGross, style: 'bold' }, { text: ' kg      Tare Wt. : ', style: 'subheader1' }, { text: weight.tenTare + ',' + weight.thousenTare, style: 'bold' }, { text: ' kg     Net Wt. : ', style: 'subheader1' }, { text: weight.tenNet + ',' + weight.thousenNet, style: 'bold' }, { text: ' kg', style: 'subheader1' }]
+        },
         { text: `_______________________________________________________________________________________________`, style: 'line' },
 
         { text: `Dispatch incharge          Driver Sign.        Customer Sign. with stamp`, style: 'subheader' },
-        { text: `Dispatch incharge          Driver Sign.        Customer Sign. with stamp`, style: 'bold' }
 
-
+        // {
+        //   text: ['hai hello 123', { text: '1235', style: 'bold' }]
+        // }
 
         // Add more fields as needed
       ],
@@ -48,7 +51,7 @@ export class PdfGeneratorService {
           margin: [0, 0, 0, 3],
         },
         line: {
-          margin: [0, 0, 0, 48],
+          margin: [0, 0, 0, 50],
         },
         line2: {
           margin: [0, 0, 0, 15],
